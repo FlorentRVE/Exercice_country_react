@@ -6,19 +6,25 @@ import TriButton from "./tributton";
 
 const Home = () => {
 
+    // ========= STATE ===========
     const [ searchTerms, setSearchTerms ] = useState(" "); 
     const [ range, setRange ] = useState(); 
     const [ tri, setTri ] = useState(); 
 
     return (
+
       <div className="bg-slate-200">
-        <h1 class="text-center text-5xl font-bold mb-5 text-slate-800 uppercase">
-          Country React Edition
-        </h1>
+
+        <h1 class="text-center text-5xl font-bold mb-5 text-slate-800 uppercase">Country React Edition</h1>
+
+        {/* ========== SET STATE ============= */}
         <SearchBar setSearchTerms={setSearchTerms} />,
         <Range setRange={setRange} range={range} />,
         <TriButton setTri={setTri} />,
+        
+        {/* ============ USE STATE ============== */}
         <CountryDisplay searchTerms={searchTerms} range={range} tri={tri} />
+
       </div>
     );
 };
